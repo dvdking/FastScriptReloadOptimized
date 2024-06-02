@@ -497,7 +497,7 @@ namespace FastScriptReload.Editor
             }
 
             if ((bool)FastScriptReloadPreference.EnableAutoReloadForChangedFiles.GetEditorPersistedValueOrDefault() &&
-                (DateTime.UtcNow - _lastTimeChangeBatchRun).TotalSeconds > (int)FastScriptReloadPreference.BatchScriptChangesAndReloadEveryNSeconds.GetEditorPersistedValueOrDefault())
+                (DateTime.UtcNow - _lastTimeChangeBatchRun).TotalMilliseconds > 100)
             {
                 TriggerReloadForChangedFiles();
             }
